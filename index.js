@@ -5,6 +5,7 @@ const getWeather = require('./getWeather');
 const help = require('./help');
 
 module.exports = () => {
+
     try{
         const args = parseArgs(process.argv.slice(2));
 
@@ -12,8 +13,6 @@ module.exports = () => {
             registerKey(args.key);
         else if(args.city)
             getWeather(args.city);
-        else if(args.help)
-            help();
         else
             help();
         
