@@ -1,6 +1,8 @@
 const Request = require('request');
 const parseArgs = require('minimist');
 const env = require('node-env-file');
+const colors = require('colors');
+const pun = require('./pun');
 
 env(__dirname + '/.env');
 
@@ -17,8 +19,8 @@ try{
                 return console.dir(error);
             }
 
-            const data = JSON.parse(body);
-           console.log('The temperature in',data.name,'is',data.main.temp + 'ºC');
+            const weather = JSON.parse(body);
+            console.log(pun(weather));
         });
     }
 
