@@ -1,13 +1,13 @@
 {
-  "name": "frontmenweather",
-  "version": "1.0.7",
+  "name": "frontweather",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "author": "Leonardo Almeida",
   "license": "ISC",
   "preferGlobal": true,
   "bin": {
-    "frontmenweather": "./bin/frontmenweather"
+    "frontweather": "./bin/frontweather"
   },
   "dependencies": {
     "node-emoji": "^1.8.1",
