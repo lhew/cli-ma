@@ -7,17 +7,15 @@ const help = require('./help');
 try{
     const args = parseArgs(process.argv.slice(2));
 
-    if(args.key){
+    if(args.key)
         registerKey(args.key);
-    }
-
-    if(args.city){
+    else if(args.city)
         getWeather(args.city);
-    }
-
-    if(args.help){
+    else if(args.help)
         help();
-    }
+    else
+        help();
+    
 
 }catch(e){
     console.log('wooow bro shit happened');

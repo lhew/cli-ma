@@ -3,7 +3,14 @@ const colors = require('colors');
 const Request = require('request');
 const env = require('node-env-file');
 const pun = require ('./pun');
-env(__dirname + '/.env');
+const package = require('./package.json');
+const registerKey = require('./registerKey');
+
+try{
+    env(__dirname + '/.env');
+}catch(e){
+    registerKey('blank');
+}
 
 module.exports = city => {
     try{
@@ -12,6 +19,12 @@ module.exports = city => {
         if(!token){
             showApiKeyError();
             return;
+        }
+
+        if(token == 'blank'){
+            console.log('Error:'.red, ' your api key is invalid, bro...');
+            console.log('get yourself one at get yourself a public api key at https://openweathermap.org/api.');
+            console.log('and then type', colors.yellow(package.name + ' --key [your_key]'), ' to access the forecast');
         }
 
         if(city && city.toString().toLowerCase().match(/[a-z]/) === null || !isNaN(city)){
