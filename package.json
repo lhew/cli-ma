@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Leonardo Almeida",
   "license": "ISC",
+  "preferGlobal": true,
   "dependencies": {
     "node-emoji": "^1.8.1",
     "node-env-file": "^0.1.8",
