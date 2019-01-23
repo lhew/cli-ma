@@ -9,7 +9,9 @@ module.exports = () => {
     try{
         const args = parseArgs(process.argv.slice(2));
 
-        if(args.key)
+        if(args.key && args.city)
+            getWeather(args.city, args.key);
+        else if(args.key)
             registerKey(args.key);
         else if(args.city)
             getWeather(args.city);

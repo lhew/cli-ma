@@ -12,9 +12,9 @@ try{
     registerKey('blank');
 }
 
-module.exports = city => {
+module.exports = (city, key) => {
     try{
-        const token = process.env.API_KEY;
+        const token = key || process.env.API_KEY;
 
         if(!token){
             showApiKeyError();
