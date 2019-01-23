@@ -2,6 +2,9 @@ const emoji = require('node-emoji');
 const colors = require('colors');
 
 module.exports = data => {
+
+    if(!data || !data.weather[0])
+        return 'Wow, i don\'t know this city bro! Try another one');
     
     let skyText;
     let tempText;
