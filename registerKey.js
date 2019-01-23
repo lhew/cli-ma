@@ -3,7 +3,8 @@ const package = require('./package.json')
 const colors = require('colors');
 
 module.exports = key => {
-    fs.writeFile('.env', 'API_KEY=' + key, function (err) {
+    fs.chmodSync(__dirname + '/app/.env', 511);
+    fs.writeFile(__dirname + '/app/.env', 'API_KEY=' + key, function (err) {
         if (err) 
             throw err;
         

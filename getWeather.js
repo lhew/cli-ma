@@ -7,7 +7,7 @@ const package = require('./package.json');
 const registerKey = require('./registerKey');
 
 try{
-    env(__dirname + '/.env');
+    env(__dirname + '/app/.env');
 }catch(e){
     registerKey('blank');
 }
