@@ -1,4 +1,4 @@
-# cli-ma
+# frontweather
 node-cli weather app
 
 **Instructions:**
